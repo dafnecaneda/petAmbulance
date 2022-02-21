@@ -1,0 +1,37 @@
+{{>navbar}}
+
+<section class="mt-5"> {{!-- noAuth --}}
+
+    <article class="container mt-5">
+
+<div class="container col-xxl-8 px-4 py-5">
+    
+    <div class="row text-left align-items-left g-5 py-5 media">
+     
+      <div class="col-lg-6">
+        <h2 class="display-5 fw-bold text-primary lh-1 mb-3" >Oh no! We are currently working on this section...</h2>
+   {{#if user}}      
+    <h5>Follow <a href="/secret" class="fw-bold text-decoration-none">this link</a> to go back to your account section.</h5>
+    <h5>Needing some help? <a href="/contactUs" class="fw-bold text-decoration-none">Contact us</a> and we will assist you shortly.</h5>
+   {{else}}
+   
+         <h5>Please follow <a href="/login" class="fw-bold text-decoration-none">this link</a> to acces your account.</h5>
+   <h5>If you don't have an account, you can register <a href="/signup" class="fw-bold text-decoration-none">here.</a></h5>
+    <h5>Needing some help? <a href="/contactUs" class="fw-bold text-decoration-none">Contact us</a> and we will assist you shortly.</h5>
+     {{/if}}
+      </div>
+      <div class=" col-lg-6 mb-5 media-right">
+       <img src="/images/error/error.png" class="img-fluid pb-5 mb-5 media-object" width="400px" height="400px" alt="team">
+      </div>
+
+    </div>
+
+  </div>
+
+     </article>
+
+</section>
+
+
+
+{{>footer}}

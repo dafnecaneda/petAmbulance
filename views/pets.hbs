@@ -1,0 +1,45 @@
+{{>navbar}}
+
+<section>
+  <div class=" text-center mx-5">
+  <h2 class="display-5 fw-bold lh-1 py-5 text-center">Your Pets</h2>
+   <h4> Here are the details of your furry friend/s. </h4><h4>You can check the Vet Notes of the last visit, add a new Pet to the registers, or discard any wrong details. </h4>
+  </div>
+<div class="text-center mt-5">
+  <a href="/pets/addPets">  <button class="btn btn-lg btn-primary">Add Pet</button></a>
+</div>
+<div class="text-center mb-5">
+  <img src="/images/products/doggie.png" width="300px" height="300px" class="mt-5 img-fluid" alt="personwalkingdogs">
+  </div>
+  <div class="container-fluid">
+  <div class="row">
+  
+      {{#each data}}
+      
+    <div class="card-body text-center m-4 col-12 py-5 col-md-4 border rounded rounded-3 border-primary  border-3">
+       <img src={{imageURL}} alt={{petName}} class="mb-5 rounded-circle"> 
+          
+        <h2 class="card-title fw-bold text-primary">{{petName}}</h2>
+        <p class="card-text fw-bold">Last Vet Check Up: </p><p>{{observations}}</p>
+        <p class="card-text fw-bold">Type: {{type}}</p>
+        <p class="card-text fw-bold">Breed: {{breed}}</p>
+        <p class="card-text fw-bold">Gender: {{gender}}</p>
+        <p class="card-text fw-bold">Age: {{age}} years.</p>
+
+{{!-- modify --}}
+  <a href="/pets/handleEdit/{{id}}" > <button class="btn mt-5 btn-sm btn-warning"> Modify Pet</button></a>
+{{!-- erase --}}
+    <a href="/pets/deletePet/{{id}}" > <button class="btn mt-5 btn-sm btn-danger">Erase Pet</button></a>
+  
+   <a href="*" > <button class="btn mt-5 btn-sm btn-info"> Book Appointment</button></a>
+
+    </div>
+        {{/each}}
+  
+
+</div>
+</div>
+</section>
+
+
+{{>footer}}

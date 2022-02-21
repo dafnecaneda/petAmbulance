@@ -1,0 +1,84 @@
+<div class="vh-100">
+ 
+  <div class="container-fluid">
+   
+    <div class="row">
+      
+      <div class="col-sm-6 pt-4 text-black">
+
+           <div class="ms-xl-4 px-5 navbar-light navbar-brand">
+           <a class="navbar-brand" href="/"> <img src="/images/navbar/ambulance.png" width="50px" height="50px" alt="ambulance">  <a class="fw-bold navbar-brand" href="/"> PetAmbulance</a>
+        </div>
+
+        <div class="px-5 pt-4 ms-xl-4 ">
+          <span class="h1 text-primary fw-bold mb-0">Modify your Pet's information.</span>
+          <p class="pt-4"> You can change any incaccurate information and save those changes in to our database.</p>
+           <p class="pt-4">If you need help or personalized consultation please, <a href="/contactUs" class="fw-bold text-decoration-none">Contact us</a> and we will assist you shortly.</p>
+        </div>
+
+        <div class="d-flex align-items-center px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
+
+{{!-- START FORM --}}
+
+<form action="/pets/editPet" style="width: 23rem;" method="POST" enctype="multipart/form-data" >
+
+
+    <input type="text" id="id" name="id" value="{{pet.id}}" class="form-control" hidden/>
+       
+
+  <div class="form-outline mb-4">
+    <label class="form-label" for="petName">Pet Name</label>
+    <input type="text" id="petName" name="petName" value="{{pet.petName}}" class="form-control" autofocus/>
+  </div>
+
+  <div class="form-outline mb-4">
+    <label class="form-label" for="type">Type</label>
+    <input type="text" id="type" name="type" value={{pet.type}}  class="form-control" />
+  </div>
+
+    <div class="form-outline mb-4">
+    <label class="form-label" for="breed">Breed</label>
+    <input type="text" id="breed" name="breed" value={{pet.breed}}  class="form-control" />
+  </div>
+
+ <div class="form-outline mb-4">
+    <label class="form-label" for="age">Age</label>
+    <input type="number" id="age" name="age" value={{pet.age}}  class="form-control" />
+  </div>
+
+   <div class="form-outline mb-4">
+    <label class="form-label" for="imageFile">Select a picture of your Pet</label>
+    <input type="file" id="imageFile" name="imageFile" class="form-control"/>
+  </div>
+      <input type="text" value={{pet.image}} name="prevImage" hidden/>
+
+  <div class="form-check d-flex  mb-4">
+    <input class="form-check-input me-2" type="radio" name="gender" value="female" id="gender"  />
+    <label class="form-check-label" for="female"> Female </label>
+  </div>
+  <div class=" form-check d-flex  mb-4">
+    <input class="form-check-input me-2" type="radio" name="gender" value="male" id="gender"  />
+    <label class="form-check-label" for="male"> Male </label>
+  </div>
+
+    <div class="pt-1  mb-4">
+              <button class="btn btn-lg btn-primary btn-block" value="modify" type="submit">Save changes</button>
+             <a href="/pets"> <button class="btn btn-lg btn-secondary btn-block" type="button" value="cancel">Cancel</button> </a>
+            </div>
+
+
+         </form>
+
+        </div>
+
+      </div>
+
+     <div class="py-5 col-lg-6 px-5 my-5 d-none d-sm-block ">
+        <img src="/images/editpet/edit.png" alt="Login image" class="form">
+      </div>
+
+    </div>
+       
+  </div>
+
+</div>

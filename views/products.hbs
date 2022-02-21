@@ -1,0 +1,72 @@
+{{>navbar}}
+
+{{!-- logged user products start --}}
+
+{{#if user}}
+<section>
+  <div class=" text-center mx-5">
+  <h2 class="display-5 fw-bold lh-1 py-5 text-center">Want to change your Plan?</h2>
+   <h4> We know life brings a lot of changes, and we want to be there with you in your Pet Parenthood journey, providing the best care and quality service. Feel free to check our Plans and if needed, change to one more suitable. If you can't decide wich plan will be the best option, <a href="contactUs" class="fw-bold text-decoration-none">contact us</a> and we will assist you in short time. </h4>
+  </div>
+
+  <div class="container-fluid">
+  <div class="row">
+
+      {{#each data}}
+
+   <div class="card-body text-center m-4 col-12 py-5 col-md-4 border rounded rounded-3 border-primary  border-3">
+  
+          
+        <h2 class="card-title fw-bold text-primary">{{name}}</h2>
+        <h4 class="card-text">{{description}}</h4>
+        <p>{{benefits}}</p>
+        <h5 class="fw-bold text-primary">{{price}}</h5>
+         <a href="*" class="icon-link"> Change to this plan.</a>
+  
+      
+    </div>
+          {{/each}}
+  </div>
+
+</div>
+</section>
+
+
+{{!-- logged user products end --}}
+
+ {{else}}
+
+{{!-- not logged user products start --}}
+<section>
+  <div class=" text-center mx-5">
+  <h2 class="display-5 fw-bold lh-1 py-5 text-center">Health Plans</h2>
+   <h4> We have different options so you can choose the one more suitable for you and your furry companion. If you can't decide wich plan will be the best option, <a href="contactUs" class="fw-bold text-decoration-none">contact us</a> and we will assist you in short time. </h4>
+  </div>
+
+  <div class="container-fluid">
+  <div class="row">
+
+     {{#each data}}
+ <div class="card-body text-center m-4 col-12 py-5 col-md-4 border rounded rounded-3 border-primary  border-3">
+
+          
+        <h2 class="card-title fw-bold text-primary">{{name}}</h2>
+        <h4 class="card-text">{{description}}</h4>
+        <p>{{benefits}}</p>
+        <h5 class="fw-bold text-primary">{{price}}</h5>
+         <a href="*" class="icon-link"> Suscribe to this plan.</a>
+  
+     
+    </div>
+          {{/each}}
+  </div>
+
+</div>
+</section>
+{{!-- not logged user products end --}}
+{{/if}}
+{{>footer}}
+  
+
+
+  

@@ -1,0 +1,102 @@
+<div class="vh-100">
+ 
+  <div class="container-fluid">
+   
+    <div class="row">
+      
+      <div class="col-sm-6 pt-4 text-black">
+
+           <div class="ms-xl-4 px-5 navbar-light navbar-brand">
+           <a class="navbar-brand" href="/"> <img src="/images/navbar/ambulance.png" width="50px" height="50px" alt="ambulance">  <a class="fw-bold navbar-brand" href="/"> PetAmbulance</a>
+        </div>
+
+        <div class="px-5 pt-4 ms-xl-4 ">
+          <span class="h1 text-primary fw-bold mb-0">Add a furry friend!</span>
+          <p class="pt-4"> Let's register your pet. Provide the information asked below, this will help the Vets when booking appointments.</p>
+        </div>
+
+        <div class="d-flex align-items-center px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
+
+{{!-- START FORM --}}
+
+<form action="/pets/addPets" style="width: 23rem;" method="POST" enctype="multipart/form-data" >
+{{!-- enctype="multipart/form-data" --}}
+           
+  {{#each arrWarning}}
+               <div class="alert alert-primary d-flex align-items-center" role="alert">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+    <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+  </svg>
+                    {{msg}}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                {{/each}}
+                {{#if messageImg}}
+              <div class="alert alert-primary d-flex align-items-center" role="alert">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+    <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+  </svg>
+                    {{messageImg}}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+
+                {{/if}}
+
+  <div class="form-outline mb-4">
+    <label class="form-label" for="petName">Pet Name</label>
+    <input type="text" id="petName" name="petName" class="form-control" placeholder="Example: Michi" {{#if formData.petName}} value="{{formData.petName}}" {{/if}} autofocus/>
+  </div>
+
+  <div class="form-outline mb-4">
+    <label class="form-label" for="type">Type</label>
+    <input type="text" id="type" name="type" class="form-control" placeholder="Example: Cat" {{#if formData.type}} value="{{formData.type}}" {{/if}}/>
+  </div>
+
+    <div class="form-outline mb-4">
+    <label class="form-label" for="breed">Breed</label>
+    <input type="text" id="breed" name="breed" class="form-control" placeholder="Example: Persian" {{#if formData.breed}} value="{{formData.breed}}" {{/if}}/>
+  </div>
+
+ <div class="form-outline mb-4">
+    <label class="form-label" for="age">Age</label>
+    <input type="number" id="age" name="age" class="form-control"     {{#if formData.age}} value="{{formData.age}}" {{/if}}/>
+  </div>
+
+   <div class="form-outline mb-4">
+    <label class="form-label" for="imageFile">Select a picture of your Pet</label>
+    <input type="file" id="imageFile" name="imageFile" class="form-control" />
+  </div>
+
+  <div class="form-check d-flex  mb-4">
+    <input class="form-check-input me-2" type="radio" name="gender" value="female" id="gender"  />
+    <label class="form-check-label" for="female"> Female </label>
+  </div>
+  <div class=" form-check d-flex  mb-4">
+    <input class="form-check-input me-2" type="radio" name="gender" value="male" id="gender"  />
+    <label class="form-check-label" for="male"> Male </label>
+  </div>
+
+    <div class="pt-1  mb-4">
+              <button class="btn btn-lg btn-primary btn-block" type="submit">Add Pet</button>
+               <a href="/pets"> <button class="btn btn-lg btn-secondary btn-block" type="button">Cancel</button> </a>
+            </div>
+
+            {{!-- <p class="small mb-5 pb-lg-2"><a class="text-muted" href="#!">Forgot password?</a></p>
+            <p>Don't have an account? <a href="#!" class="link-info">Register here</a></p> --}}
+
+
+         </form>
+
+        </div>
+
+      </div>
+
+  <div class="py-5 col-lg-6 px-5 my-5 d-none d-sm-block ">
+        <img src="/images/addpet/addpet.png" alt="Login image" class=" form">
+      </div>
+    
+    </div>
+       
+  </div>
+
+</div>
