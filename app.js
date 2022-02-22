@@ -69,7 +69,7 @@ app.get("*", (req, res) => {
   res.render("error");
 });
 
-app.listen(PORT, (err) => {
+app.listen(process.env.PORT, (err) => {
   err
     ? console.log("oh no!... We are currently working on some fixes, please come back later ! 😫")
     : console.log(`Servidor corre en http://localhost:${PORT}/`);

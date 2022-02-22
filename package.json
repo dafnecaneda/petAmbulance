@@ -1,7 +1,7 @@
 {
-  "name": "node_login",
+  "name": "petambulance",
   "version": "1.0.0",
-  "description": "Sistema de LogIn con MySQL",
+  "description": "Crud",
   "main": "index.js",
   "scripts": {
     "start": "node app.js",
