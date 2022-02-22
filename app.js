@@ -21,7 +21,6 @@ const routeSecret = require("./routes/secret");
 const routeProducts = require("./routes/products");
 const routeSignup = require("./routes/signup");
 const routePets = require("./routes/pets"); 
-const routeModify = require("./routes/modifyUser");
 const routeContactUs = require("./routes/contactUs"); 
 
 
@@ -63,7 +62,6 @@ app.use("/secret", secured, routeSecret);
 app.use("/products", routeProducts); 
 app.use("/signup", routeSignup); 
 app.use("/pets", secured, routePets); 
-app.use("/modifyUser", secured, routeModify);
 app.use("/contactUs", routeContactUs); 
 app.get("*", (req, res) => {
   res.render("error");
