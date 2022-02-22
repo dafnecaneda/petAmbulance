@@ -3,7 +3,7 @@ const path = require("path");
 const fileupload = require("express-fileupload")
 const hbs = require("hbs");
 const session = require("express-session");
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 const app = express();
 require("dotenv").config();
 
