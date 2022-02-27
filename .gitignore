@@ -1,3 +1,4 @@
 modifyUser.js
 node_modules
 modifyUser.hbs
+.env
